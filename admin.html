@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پنل ادمین | پارس‌رایان ParsRayan ERP</title>
+  <meta name="description" content="داشبورد مدیریت یکپارچه پارس‌رایان برای انبار، تولید، کیفیت و فروش." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ["Vazirmatn", "Tahoma", "sans-serif"] } } } };</script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="font-sans min-h-screen">
+  <div class="preview-bar text-white text-center text-sm py-2 px-3 font-bold">
+    🛠️ پیش‌نمایش پنل — الان در ادمین هستید —
+    <a class="underline underline-offset-4" href="index.html">بازگشت به لندینگ</a>
+  </div>
+
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <aside id="sidebar" class="fixed top-[40px] bottom-0 right-0 z-50 w-72 bg-white border-l-2 border-slate-900 p-4 overflow-y-auto transition-transform translate-x-full lg:translate-x-0">
+    <a href="index.html" class="flex items-center gap-2 font-black mb-6">
+      <span class="w-10 h-10 rounded-xl bg-violet-600 text-white grid place-items-center border-2 border-slate-900">PR</span>
+      پارس‌رایان
+    </a>
+    <nav class="space-y-1 text-sm font-bold">
+      <button data-nav="dashboard" data-title="داشبورد مدیریت" class="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-right"><i data-lucide="layout-dashboard" class="w-4 h-4"></i> داشبورد</button>
+      <button data-nav="warehouse" data-title="انبار" class="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-right"><i data-lucide="package" class="w-4 h-4"></i> انبار</button>
+      <button data-nav="production" data-title="تولید" class="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-right"><i data-lucide="factory" class="w-4 h-4"></i> تولید</button>
+      <button data-nav="quality" data-title="کنترل کیفیت" class="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-right"><i data-lucide="shield-check" class="w-4 h-4"></i> کیفیت</button>
+      <button data-nav="purchase" data-title="خرید" class="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-right"><i data-lucide="shopping-cart" class="w-4 h-4"></i> خرید</button>
+      <button data-nav="sales" data-title="فروش" class="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-right"><i data-lucide="receipt" class="w-4 h-4"></i> فروش</button>
+      <button data-nav="crm" data-title="CRM" class="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-right"><i data-lucide="users" class="w-4 h-4"></i> CRM</button>
+      <button data-nav="reports" data-title="گزارش‌ها" class="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-right"><i data-lucide="bar-chart-3" class="w-4 h-4"></i> گزارش‌ها</button>
+      <button data-nav="settings" data-title="تنظیمات" class="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-right"><i data-lucide="settings" class="w-4 h-4"></i> تنظیمات</button>
+    </nav>
+    <p class="text-xs text-slate-500 mt-8">نسخه نمایشی استاتیک ۱.۰ · ۱۰ کاربر</p>
+  </aside>
+
+  <div class="lg:mr-72">
+    <header class="sticky top-[40px] z-30 bg-white/95 backdrop-blur border-b-2 border-slate-900 px-4 py-3 flex items-center gap-3">
+      <button id="sidebar-toggle" class="lg:hidden p-2 rounded-xl border-2 border-slate-900" aria-label="منو"><i data-lucide="panel-right" class="w-5 h-5"></i></button>
+      <h1 id="page-title" class="font-black text-lg flex-1">داشبورد مدیریت</h1>
+      <input class="hidden md:block border-2 border-slate-900 rounded-xl px-3 py-1.5 text-sm w-48" placeholder="جستجوی سریع…" />
+      <span class="hidden sm:inline-flex items-center gap-1 badge text-amber-800 bg-amber-100">🔔 ۳</span>
+      <span class="text-sm font-bold truncate">مریم نوری · QC</span>
+      <a href="index.html" class="text-sm font-black text-blue-700">سایت</a>
+    </header>
+
+    <main class="p-4 md:p-6 space-y-6">
+      <section data-view="dashboard" class="space-y-6">
+        <div id="kpi-grid" class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4"></div>
+        <div class="grid lg:grid-cols-3 gap-4">
+          <article class="card-neo p-5 lg:col-span-2">
+            <h2 class="font-black mb-3">روند خروجی تولید</h2>
+            <canvas id="chart-prod" height="120"></canvas>
+          </article>
+          <article class="card-neo p-5">
+            <h2 class="font-black mb-3">ترکیب موجودی انبار</h2>
+            <canvas id="chart-stock" height="180"></canvas>
+          </article>
+        </div>
+        <article class="card-neo p-5">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+            <h2 class="font-black">آخرین اسناد انبار</h2>
+            <input id="mv-search" class="border-2 border-slate-900 rounded-xl px-3 py-1.5 text-sm" placeholder="فیلتر سند…" />
+          </div>
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>سند</th><th>تاریخ</th><th>کالا</th><th>مقدار</th></tr></thead>
+              <tbody id="mv-body"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section data-view="warehouse" class="hidden space-y-4">
+        <div class="flex flex-wrap gap-3 items-center justify-between">
+          <p class="text-slate-600 text-sm">موجودی کارخانه نمونه · هشدار زیر حداقل فعال است.</p>
+          <div class="flex gap-2">
+            <input id="wh-search" class="border-2 border-slate-900 rounded-xl px-3 py-2 text-sm" placeholder="جستجوی کالا…" />
+            <button class="btn-primary px-4 py-2 rounded-xl font-bold" type="button" onclick="openModal('doc-modal')">ثبت سند</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>کد</th><th>کالا</th><th>موجودی</th><th>حداقل</th><th>محل</th><th>وضعیت</th></tr></thead>
+            <tbody id="wh-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section data-view="production" class="hidden">
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>سفارش کار</th><th>محصول</th><th>خط</th><th>پیشرفت</th><th>وضعیت</th></tr></thead>
+            <tbody id="prod-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section data-view="quality" class="hidden">
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>کد بازرسی</th><th>مورد</th><th>نتیجه</th><th>عدم انطباق</th><th>مسئول</th></tr></thead>
+            <tbody id="qc-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section data-view="purchase" class="hidden">
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>درخواست</th><th>تأمین‌کننده</th><th>کالا</th><th>وضعیت</th></tr></thead>
+            <tbody id="pr-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section data-view="sales" class="hidden">
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>سفارش</th><th>مشتری</th><th>مبلغ</th><th>وضعیت</th></tr></thead>
+            <tbody id="so-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section data-view="crm" class="hidden">
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>طرف حساب</th><th>مرحله</th><th>مالک</th></tr></thead>
+            <tbody id="crm-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section data-view="reports" class="hidden space-y-4">
+        <div class="grid md:grid-cols-3 gap-4">
+          <article class="card-neo p-5 bg-emerald-300"><p class="font-bold">کاربران فعال</p><p class="text-3xl font-black">۱۰ از ۱۰</p></article>
+          <article class="card-neo p-5 bg-sky-300"><p class="font-bold">خطوط در شیفت</p><p class="text-3xl font-black">۲ از ۳</p></article>
+          <article class="card-neo p-5 bg-orange-300"><p class="font-bold">خرید در انتظار</p><p class="text-3xl font-black">۱ درخواست</p></article>
+        </div>
+        <p class="text-slate-600 text-sm">گزارش‌های کامل در نسخه عملیاتی به خروجی اکسل متصل می‌شوند. این صفحه نمای مدیریتی استاتیک است.</p>
+      </section>
+
+      <section data-view="settings" class="hidden">
+        <div class="card-neo p-6 max-w-xl space-y-3">
+          <h2 class="font-black">تنظیمات نمایشی</h2>
+          <label class="flex items-center justify-between font-bold border-2 border-slate-900 rounded-xl px-3 py-2">تم روشن (فعال)<input type="checkbox" checked disabled /></label>
+          <label class="flex items-center justify-between font-bold border-2 border-slate-900 rounded-xl px-3 py-2">اعلان کمبود موجودی<input type="checkbox" checked /></label>
+          <p class="text-xs text-slate-500">ذخیره تنظیمات در این نسخه نمایشی به سرور ارسال نمی‌شود.</p>
+        </div>
+      </section>
+    </main>
+    <footer class="px-6 pb-6 text-xs text-slate-500">پارس‌رایان | ParsRayan ERP · پنل ادمین نمایشی</footer>
+  </div>
+
+  <div id="doc-modal" class="modal-backdrop">
+    <form id="doc-form" class="card-neo bg-white p-6 w-full max-w-md space-y-3">
+      <h3 class="font-black text-lg">ثبت رسید / حواله</h3>
+      <label class="block text-sm font-bold">نوع سند
+        <select id="doc-type" class="mt-1 w-full border-2 border-slate-900 rounded-xl px-3 py-2">
+          <option value="in">رسید ورود</option>
+          <option value="out">حواله خروج</option>
+        </select>
+      </label>
+      <label class="block text-sm font-bold">کالا
+        <input id="doc-item" class="mt-1 w-full border-2 border-slate-900 rounded-xl px-3 py-2" />
+      </label>
+      <label class="block text-sm font-bold">مقدار
+        <input id="doc-qty" type="number" min="1" class="mt-1 w-full border-2 border-slate-900 rounded-xl px-3 py-2" />
+      </label>
+      <div class="flex gap-2 pt-2">
+        <button type="submit" class="btn-primary flex-1 py-2 rounded-xl font-bold">ثبت</button>
+        <button type="button" class="flex-1 py-2 rounded-xl font-bold border-2 border-slate-900" onclick="closeModal('doc-modal')">انصراف</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
