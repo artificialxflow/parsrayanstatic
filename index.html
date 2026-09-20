@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پارس‌رایان | ParsRayan ERP — نرم‌افزار یکپارچه تولید</title>
+  <meta name="description" content="ERP تولیدی پارس‌رایان برای کنترل کیفیت، تولید، انبار، خرید، فروش و CRM. مناسب کارخانه‌های متوسط با حدود ۴۰ پرسنل و ۱۰ کاربر سیستم." />
+  <meta property="og:title" content="پارس‌رایان | ParsRayan ERP" />
+  <meta property="og:description" content="یکپارچگی تولید تا فروش در یک پنل روشن، رنگی و حرفه‌ای." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏭</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Vazirmatn", "Tahoma", "sans-serif"] },
+          colors: { brand: { 50: "#eff6ff", 600: "#2563eb", 800: "#1e40af" } },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="font-sans">
+  <div class="preview-bar text-white text-center text-sm py-2 px-3 font-bold">
+    👀 پیش‌نمایش دوگانه: الان در لندینگ هستید —
+    <a class="underline underline-offset-4" href="admin.html">ورود به پنل ادمین</a>
+  </div>
+
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b-2 border-slate-900">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <a href="#top" class="flex items-center gap-2 font-black text-lg">
+        <span class="w-10 h-10 rounded-xl bg-blue-600 text-white grid place-items-center border-2 border-slate-900">PR</span>
+        پارس‌رایان <span class="text-slate-400 font-medium text-sm hidden sm:inline">| ParsRayan ERP</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-5 text-sm font-bold text-slate-700">
+        <a href="#features">ویژگی‌ها</a>
+        <a href="#modules">ماژول‌ها</a>
+        <a href="#benefits">مزایا</a>
+        <a href="#pricing">تعرفه‌ها</a>
+        <a href="#reviews">نظرات</a>
+        <a href="#contact">تماس</a>
+      </nav>
+      <div class="hidden sm:flex items-center gap-2">
+        <a href="admin.html" class="px-3 py-2 rounded-xl border-2 border-slate-900 font-bold bg-white">ورود به پنل</a>
+        <a href="#contact" class="btn-primary px-4 py-2 rounded-xl font-bold">درخواست دمو</a>
+      </div>
+      <button id="menu-btn" class="lg:hidden p-2 rounded-xl border-2 border-slate-900 bg-white" aria-label="منو">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <div id="mobile-nav" class="hidden lg:hidden border-t-2 border-slate-900 bg-white px-4 py-3 space-y-2 font-bold">
+      <a class="block" href="#features">ویژگی‌ها</a>
+      <a class="block" href="#modules">ماژول‌ها</a>
+      <a class="block" href="#benefits">مزایا</a>
+      <a class="block" href="#pricing">تعرفه‌ها</a>
+      <a class="block" href="#reviews">نظرات</a>
+      <a class="block" href="#contact">تماس</a>
+      <a class="block text-blue-700" href="admin.html">ورود به پنل ادمین</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="relative overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80" alt="خط تولید کارخانه" class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-slate-900/70"></div>
+      <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-28 text-white">
+        <p class="inline-flex items-center gap-2 bg-white text-slate-900 font-bold px-3 py-1 rounded-full border-2 border-orange-400 mb-5">🏭 مناسب کارخانه حدود ۴۰ پرسنل و ۱۰ کاربر سیستم</p>
+        <h1 class="text-3xl md:text-5xl font-black leading-tight max-w-3xl">تولید، کیفیت و انبار را در یک نگاه مدیریت کنید</h1>
+        <p class="mt-4 max-w-2xl text-lg text-blue-50">پارس‌رایان | ParsRayan ERP نرم‌افزار یکپارچه تولیدی است؛ از سفارش کار تا فاکتور فروش، بدون جزیره‌های اکسل و با داشبوردی که تیم کوچک شما واقعاً از آن استفاده می‌کند.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#contact" class="btn-accent px-6 py-3 rounded-xl font-black">درخواست دمو رایگان</a>
+          <a href="admin.html" class="px-6 py-3 rounded-xl font-black bg-white text-slate-900 border-2 border-white">پیش‌نمایش پنل ادمین</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 -mt-8 relative z-10 grid sm:grid-cols-3 gap-4">
+      <div class="card-neo p-5 bg-emerald-400"><p class="text-sm font-bold">کاربران همزمان</p><p class="text-3xl font-black">۱۰ کاربر</p></div>
+      <div class="card-neo p-5 bg-amber-300"><p class="text-sm font-bold">ماژول‌های کلیدی</p><p class="text-3xl font-black">۶ حوزه</p></div>
+      <div class="card-neo p-5 bg-sky-300"><p class="text-sm font-bold">مقیاس هدف</p><p class="text-3xl font-black">۴۰ پرسنل</p></div>
+    </section>
+
+    <section id="dual" class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-black mb-2">دو نما از یک محصول ✨</h2>
+      <p class="text-slate-600 mb-8">سایت معرفی برای تصمیم‌گیرندگان، پنل عملیاتی برای تیم تولید و انبار.</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="#features" class="card-neo overflow-hidden block hover:-translate-y-0.5 transition">
+          <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=80" alt="انبار صنعتی" class="h-44 w-full object-cover" />
+          <div class="p-5"><h3 class="font-black text-lg">لندینگ معرفی</h3><p class="text-slate-600 text-sm mt-1">روایت ارزش، تعرفه و اعتمادسازی برای مدیرعامل و هیئت مدیره.</p></div>
+        </a>
+        <a href="admin.html" class="card-neo overflow-hidden block hover:-translate-y-0.5 transition">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="داشبورد مدیریت" class="h-44 w-full object-cover" />
+          <div class="p-5"><h3 class="font-black text-lg">پنل ادمین یکپارچه</h3><p class="text-slate-600 text-sm mt-1">KPI، جدول، نمودار و عملیات انبار، تولید، کیفیت و فروش.</p></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="features" class="bg-white border-y-2 border-slate-900 py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-black mb-8">ویژگی‌هایی که کارخانه را جلو می‌برد 🚀</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <article class="card-neo p-5 bg-blue-100"><h3 class="font-black mb-2">یک منبع حقیقت</h3><p class="text-sm text-slate-700">موجودی، سفارش کار و کیفیت روی یک داده مشترک می‌نشیند؛ گزارش‌ها دیگر با هم تناقض ندارند.</p></article>
+          <article class="card-neo p-5 bg-orange-100"><h3 class="font-black mb-2">هشدار حداقل موجودی</h3><p class="text-sm text-slate-700">قبل از خوابیدن خط، کمبود مواد را می‌بینید و درخواست خرید صادر می‌کنید.</p></article>
+          <article class="card-neo p-5 bg-emerald-100"><h3 class="font-black mb-2">کیفیت در جریان تولید</h3><p class="text-sm text-slate-700">بازرسی، عدم انطباق و اقدام اصلاحی در همان مسیر سفارش کار ثبت می‌شود.</p></article>
+          <article class="card-neo p-5 bg-violet-100"><h3 class="font-black mb-2">فروش متصل به ظرفیت</h3><p class="text-sm text-slate-700">پیش‌فاکتور بر اساس واقعیت تولید وعده می‌دهد، نه حدس فروشنده.</p></article>
+          <article class="card-neo p-5 bg-rose-100"><h3 class="font-black mb-2">CRM سبک برای تیم فروش</h3><p class="text-sm text-slate-700">سرنخ و پیگیری مشتری بدون پیچیدگی سامانه‌های سازمانی غول‌پیکر.</p></article>
+          <article class="card-neo p-5 bg-cyan-100"><h3 class="font-black mb-2">رابط فارسی و راست‌چین</h3><p class="text-sm text-slate-700">طراحی شده برای اپراتور ایرانی؛ یادگیری سریع برای ۱۰ کاربر فعال.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="modules" class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-black mb-8">ماژول‌های پارس‌رایان 🧩</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="card-neo p-6"><h3 class="font-black text-lg mb-2">🧪 کنترل کیفیت</h3><p class="text-slate-600 text-sm">بازرسی ورودی و حین تولید، ثبت عدم انطباق و پیگیری اقدام اصلاحی تا بستن پرونده.</p></div>
+        <div class="card-neo p-6"><h3 class="font-black text-lg mb-2">🏭 تولید</h3><p class="text-slate-600 text-sm">سفارش کار، برنامه‌ریزی خط و گزارش پیشرفت برای مدیر تولید و سرپرست شیفت.</p></div>
+        <div class="card-neo p-6"><h3 class="font-black text-lg mb-2">📦 انبار</h3><p class="text-slate-600 text-sm">موجودی لحظه‌ای، رسید و حواله، و هشدار زیرحداقل برای جلوگیری از توقف خط.</p></div>
+        <div class="card-neo p-6"><h3 class="font-black text-lg mb-2">🛒 خرید</h3><p class="text-slate-600 text-sm">درخواست خرید از روی کمبود، تأمین‌کننده و پیگیری سفارش تا ورود به انبار.</p></div>
+        <div class="card-neo p-6"><h3 class="font-black text-lg mb-2">💼 فروش</h3><p class="text-slate-600 text-sm">پیش‌فاکتور، فاکتور و وضعیت سفارش مشتری هم‌راستا با موجودی و تولید.</p></div>
+        <div class="card-neo p-6"><h3 class="font-black text-lg mb-2">🤝 CRM</h3><p class="text-slate-600 text-sm">سرنخ، فرصت و پیگیری پس از فروش برای تیم کوچکی که باید هر تماس را ثبت کند.</p></div>
+      </div>
+    </section>
+
+    <section id="benefits" class="bg-blue-50 border-y-2 border-slate-900 py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-black mb-8">چرا پارس‌رایان؟ ✅</h2>
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="card-neo p-6"><h3 class="font-black mb-2">برای مدیریت</h3><ul class="text-sm space-y-2 text-slate-700"><li>📊 KPI روزانه بدون انتظار گزارش اکسل</li><li>🎯 دید یکپارچه از سفارش تا تحویل</li></ul></div>
+          <div class="card-neo p-6"><h3 class="font-black mb-2">برای تولید و کیفیت</h3><ul class="text-sm space-y-2 text-slate-700"><li>🛠️ سفارش کار شفاف روی خط</li><li>🔍 ردیابی رد و قبول در همان شیفت</li></ul></div>
+          <div class="card-neo p-6"><h3 class="font-black mb-2">برای مالی و فروش</h3><ul class="text-sm space-y-2 text-slate-700"><li>💰 فاکتور متصل به واقعیت انبار</li><li>📞 قیف فروش قابل پیگیری</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-black mb-8">تعرفه‌های شفاف 💳</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="card-neo p-6"><p class="font-bold text-slate-500">استارتر</p><p class="text-3xl font-black my-3">۱۲ میلیون<small class="text-base font-bold"> / سال</small></p><p class="text-sm mb-4">۵ کاربر · انبار و فروش</p><a href="#contact" class="block text-center py-2 rounded-xl border-2 border-slate-900 font-bold">مشاوره</a></article>
+        <article class="card-neo p-6 bg-blue-600 text-white border-slate-900 relative"><span class="absolute -top-3 left-4 bg-orange-400 text-slate-900 text-xs font-black px-2 py-1 rounded-full border-2 border-slate-900">پیشنهادی کارخانه شما</span><p class="font-bold text-blue-100">حرفه‌ای تولیدی</p><p class="text-3xl font-black my-3">۲۸ میلیون<small class="text-base font-bold"> / سال</small></p><p class="text-sm mb-4">۱۰ کاربر · کیفیت، تولید، انبار، خرید، فروش، CRM</p><a href="#contact" class="block text-center py-2 rounded-xl bg-white text-slate-900 font-black border-2 border-slate-900">شروع با این پلن</a></article>
+        <article class="card-neo p-6"><p class="font-bold text-slate-500">سازمانی</p><p class="text-3xl font-black my-3">سفارشی</p><p class="text-sm mb-4">کاربران بیشتر · استقرار و آموزش حضوری</p><a href="#contact" class="block text-center py-2 rounded-xl border-2 border-slate-900 font-bold">درخواست پیشنهاد</a></article>
+      </div>
+    </section>
+
+    <section id="reviews" class="bg-white border-y-2 border-slate-900 py-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-black mb-8">صدای مشتریان تولیدی 💬</h2>
+        <div class="grid md:grid-cols-3 gap-5">
+          <blockquote class="card-neo p-6"><p class="text-sm leading-7">«بعد از پارس‌رایان، موجودی رنگ و ورق دیگر غافلگیرمان نمی‌کند. خط کمتر می‌خوابد.»</p><footer class="mt-4 font-black text-sm">مدیر تولید — صنایع پمپ آذر</footer></blockquote>
+          <blockquote class="card-neo p-6 bg-amber-50"><p class="text-sm leading-7">«عدم انطباق‌ها پرونده باز نمی‌مانند. کیفیت برای ۱۰ نفر کاربر سیستم بالاخره قابل ردیابی شد.»</p><footer class="mt-4 font-black text-sm">مسئول QC — ماشین‌سازی کویر</footer></blockquote>
+          <blockquote class="card-neo p-6"><p class="text-sm leading-7">«فروش دیگر قولی نمی‌دهد که تولید نتواند بدهد. پیش‌فاکتور به ظرفیت وصل است.»</p><footer class="mt-4 font-black text-sm">مدیرعامل — تجهیزات فرآیندی نور</footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="max-w-6xl mx-auto px-4 py-16">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-black mb-3">درخواست دمو و مشاوره 📩</h2>
+          <p class="text-slate-600 mb-6">فرم را پر کنید؛ این نسخه استاتیک است و ارسال واقعی به سرور ندارد، اما مسیر تجربه مشتری کامل شبیه‌سازی شده است.</p>
+          <ul class="space-y-2 text-sm font-bold">
+            <li>☎️ ۰۲۱-۹۱۰۹۰۰۰۰ (نمونه)</li>
+            <li>✉️ hello@parsrayan.ir</li>
+            <li>📍 تهران، شهرک صنعتی نمونه</li>
+          </ul>
+        </div>
+        <form id="contact-form" class="card-neo p-6 space-y-4 bg-white">
+          <div>
+            <label class="font-bold text-sm" for="c-name">نام و نام خانوادگی</label>
+            <input id="c-name" class="mt-1 w-full border-2 border-slate-900 rounded-xl px-3 py-2" required />
+          </div>
+          <div>
+            <label class="font-bold text-sm" for="c-company">شرکت</label>
+            <input id="c-company" class="mt-1 w-full border-2 border-slate-900 rounded-xl px-3 py-2" required />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div>
+              <label class="font-bold text-sm" for="c-phone">موبایل</label>
+              <input id="c-phone" class="mt-1 w-full border-2 border-slate-900 rounded-xl px-3 py-2" required />
+            </div>
+            <div>
+              <label class="font-bold text-sm" for="c-email">ایمیل</label>
+              <input id="c-email" type="email" class="mt-1 w-full border-2 border-slate-900 rounded-xl px-3 py-2" />
+            </div>
+          </div>
+          <div>
+            <label class="font-bold text-sm" for="c-msg">پیام</label>
+            <textarea id="c-msg" rows="4" class="mt-1 w-full border-2 border-slate-900 rounded-xl px-3 py-2" required></textarea>
+          </div>
+          <button class="btn-primary w-full py-3 rounded-xl font-black" type="submit">ارسال درخواست</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t-2 border-slate-900 bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto px-4 py-10 grid sm:grid-cols-3 gap-6 text-sm">
+      <div>
+        <p class="font-black text-lg">پارس‌رایان | ParsRayan ERP</p>
+        <p class="text-slate-300 mt-2">نرم‌افزار یکپارچه تولیدی برای تیم‌های چابک کارخانه.</p>
+      </div>
+      <div class="space-y-2 font-bold">
+        <a class="block" href="#modules">ماژول‌ها</a>
+        <a class="block" href="#pricing">تعرفه</a>
+        <a class="block" href="admin.html">پنل ادمین</a>
+      </div>
+      <p class="text-slate-400">© ۱۴۰۳ پارس‌رایان — همه حقوق محفوظ است. نسخه نمایشی استاتیک.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/landing.js"></script>
+</body>
+</html>
