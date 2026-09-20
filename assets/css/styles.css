@@ -1,0 +1,140 @@
+:root {
+  --pr-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --pr-shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  background: #f3f6fb;
+  color: #0f172a;
+}
+
+.preview-bar {
+  background: linear-gradient(90deg, #1d4ed8, #7c3aed, #db2777);
+}
+
+.card-neo {
+  background: #fff;
+  border: 2px solid #0f172a;
+  border-radius: 1.25rem;
+  box-shadow: var(--pr-shadow);
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border: 2px solid #1e3a8a;
+  box-shadow: 0 6px 0 #1e3a8a;
+}
+
+.btn-primary:hover {
+  transform: translateY(1px);
+  box-shadow: 0 5px 0 #1e3a8a;
+}
+
+.btn-accent {
+  background: #f97316;
+  color: #fff;
+  border: 2px solid #9a3412;
+  box-shadow: 0 6px 0 #9a3412;
+}
+
+.btn-accent:hover {
+  transform: translateY(1px);
+  box-shadow: 0 5px 0 #9a3412;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 2px solid #0f172a;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+table.data th,
+table.data td {
+  text-align: right;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+table.data thead th {
+  background: #eff6ff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.toast {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 80;
+  min-width: 260px;
+  max-width: 90vw;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  border: 2px solid #0f172a;
+  background: #ecfdf5;
+  box-shadow: var(--pr-shadow);
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  z-index: 70;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-backdrop.open {
+  display: flex;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .sidebar-overlay.open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.4);
+    z-index: 40;
+  }
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
